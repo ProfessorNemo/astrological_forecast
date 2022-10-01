@@ -1,0 +1,43 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 50
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/NoExpectationExample:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
