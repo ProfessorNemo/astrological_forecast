@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 # Программа "Зодиакальный гороскоп" (на сегодня, на завтра, на неделю, на месяц, на год)
-
+require 'byebug'
 require_relative 'main'
 
 BASE_URL = 'https://orakul.com/'
 
 module AstrologicalForecast
-  def self.predict
-    determinant = AstrologicalForecast::DefinitionSign.new
+  def self.predict(date = nil, type = nil, period = nil)
+    determinant = AstrologicalForecast::DefinitionSign.new(date: date)
 
-    characteristic = AstrologicalForecast::Type.new
+    characteristic = AstrologicalForecast::Type.new(type: type, period: period)
 
     params = {
       definition: determinant.definition,
@@ -24,3 +24,7 @@ module AstrologicalForecast
     forecast.data_forecast
   end
 end
+
+# AstrologicalForecast.predict('13.03', 'общий', 'на сегодня')
+
+# AstrologicalForecast.predict

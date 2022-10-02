@@ -1,6 +1,20 @@
 # frozen_string_literal: true
 
-require 'astrological_forecast'
+require 'simplecov'
+
+# Запуск измерителя покрытия кода тестами с игнорированием некоторых директорий:
+SimpleCov.start do
+  add_filter 'spec/'
+  add_filter '.github/'
+end
+
+# Если тесты работают на "Continuous Integration", то данные затем отрпавить на сервис "Codecov"
+if ENV['CI'] == 'true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
+require_relative '../lib/main'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
