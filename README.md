@@ -108,10 +108,10 @@ ruby name_programm.rb
 комфортной. Стоит подумать о том, чтобы выйти из нее раньше, чем это случится.
 ```
 
-## Помочь в разработке
+## Помочь в разработке:
 
 Шлите ваши пулреквесты в https://github.com/ProfessorNemo/astrological_forecast.
 
-## Лицензия
+## Лицензия:
 
 [MIT License](https://opensource.org/licenses/MIT)
