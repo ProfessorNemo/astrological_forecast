@@ -12,3 +12,4 @@
 .byebug_history
 .rspec_status
 coverage
+*.gem
