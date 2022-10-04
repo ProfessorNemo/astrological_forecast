@@ -1,4 +1,5 @@
-# astrological_forecast
+# `astrological_forecast`
+###### Язык написания - Ruby
 
 ![Gem](https://img.shields.io/gem/v/astrological_forecast)
 ![CI](https://github.com/ProfessorNemo/astrological_forecast/actions/workflows/ci.yml/badge.svg)
