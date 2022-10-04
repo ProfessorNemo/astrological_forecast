@@ -58,7 +58,7 @@ AstrologicalForecast.predict
 
 # Или, если не хотите ипользовать консоль для ввода данных:
 
-# AstrologicalForecast.predict('19.05', 'общий', 'на сегодня')
+AstrologicalForecast.predict('19.05', 'общий', 'на сегодня')
 
 ```
 
