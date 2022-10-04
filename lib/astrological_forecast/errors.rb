@@ -6,7 +6,7 @@ module AstrologicalForecast
 
   class IncorrectType < StandardError
     def message
-      "Некорректный тим прогноза (см. #{OPTIONS_TYPE})"
+      "Некорректный тип прогноза (см. #{OPTIONS_TYPE})"
     end
   end
 

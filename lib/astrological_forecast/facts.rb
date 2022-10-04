@@ -52,6 +52,7 @@ module AstrologicalForecast
 
           user_sign = sign if dates.first <= user_date && user_date <= dates.last
         end
+
         user_sign
       end
     end

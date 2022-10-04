@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 # Программа "Зодиакальный гороскоп" (на сегодня, на завтра, на неделю, на месяц, на год)
-require 'byebug'
 require_relative 'main'
 
 BASE_URL = 'https://orakul.com/'

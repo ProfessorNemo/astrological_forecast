@@ -17,8 +17,6 @@ module AstrologicalForecast
       @user_period = @period.nil? ? period_console : manual_check(@period, PERIODS, IncorrectPeriod)
     end
 
-    private
-
     def correct(feature)
       return nil if feature.nil?
 
