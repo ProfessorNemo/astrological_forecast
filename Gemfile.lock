@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    astrological_forecast (1.0.0)
+    astrological_forecast (1.2.0)
       nokogiri (~> 1.13)
       open-uri
 
