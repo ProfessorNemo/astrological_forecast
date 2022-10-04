@@ -6,7 +6,7 @@ require_relative 'main'
 BASE_URL = 'https://orakul.com/'
 
 module AstrologicalForecast
-  def self.predict(date = nil, type = nil, period = nil)
+  def self.predict(date:, type:, period:)
     determinant = AstrologicalForecast::DefinitionSign.new(date: date)
 
     characteristic = AstrologicalForecast::Type.new(type: type, period: period)
@@ -24,6 +24,3 @@ module AstrologicalForecast
   end
 end
 
-# AstrologicalForecast.predict('13.03', 'общий', 'на сегодня')
-
-# AstrologicalForecast.predict
