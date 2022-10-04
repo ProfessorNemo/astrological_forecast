@@ -11,6 +11,7 @@ gem 'rake', '~> 13.0'
 
 group :test do
   gem 'byebug'
+  gem 'codecov', '~> 0.4'
   gem 'rspec', '~> 3.1'
   gem 'rubocop', '~> 1.36'
   gem 'rubocop-performance', '~> 1.15'
