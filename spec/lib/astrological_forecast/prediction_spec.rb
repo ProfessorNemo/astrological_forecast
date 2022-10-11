@@ -49,6 +49,28 @@ RSpec.describe AstrologicalForecast::Prediction do
         current[:forecast] =~ /Сегодня Вы заработаете/
         expect(params).to have_received(:fetch_forecast!).once
       end
+
+      it 'can fetch & parse user data' do
+        uri = Addressable::URI.parse(url)
+        response = VCR.use_cassette('forecast') do
+          Net::HTTP.get_response(uri).body
+        end
+        response = response.force_encoding('UTF-8')
+        document = Nokogiri::HTML(response)
+        title = document.css('div.contentOnly #type2 h2').children.text.strip.gsub(/\s{2,}/, ' ')
+        body_record = document.css('div.contentOnly p')[0].children.text.strip
+
+        expect(uri.scheme).to eq('https')
+        expect(uri.host).to eq('orakul.com')
+        expect(uri.path).to eq('/horoscope/astrologic/general/pisces/today.html')
+        expect(uri.normalize == uri).to be(true)
+        expect(response).to be_a(String)
+
+        # это заголовок
+        expect(title) =~ /Общий гороскоп на сегодня/
+        # Строка с прогнозом не пустая, прогноз присутствует
+        expect(body_record).not_to be_empty
+      end
     end
   end
 end

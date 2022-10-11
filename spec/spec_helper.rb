@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'simplecov'
+require 'webmock/rspec'
+require 'byebug'
 
 # Запуск измерителя покрытия кода тестами с игнорированием некоторых директорий:
 SimpleCov.start do
@@ -15,6 +17,7 @@ if ENV['CI'] == 'true'
 end
 
 require_relative '../lib/main'
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -26,4 +29,20 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  # Разрешаем делать подключения к реальным сервисам
+  WebMock.allow_net_connect!
+
+  WebMock::API.prepend(Module.new do
+    extend self
+    # disable VCR when a WebMock stub is created
+    # for clearer spec failure messaging
+    def stub_request(*args)
+      # Выключаем VCR в тех случаях, когда работает WebMock и наоборот
+      VCR.turn_off!
+      super
+    end
+  end)
+
+  config.before { VCR.turn_on! }
 end

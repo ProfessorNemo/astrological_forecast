@@ -17,4 +17,8 @@ group :test do
   gem 'rubocop-performance', '~> 1.15'
   gem 'rubocop-rspec', '~> 2.13'
   gem 'simplecov', '~> 0.21'
+  gem 'vcr', '~> 6.1'
+  gem 'webmock', '~> 3.1'
 end
+
+gem 'addressable', '~> 2.8'

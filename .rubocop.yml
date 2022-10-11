@@ -10,7 +10,7 @@ Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
 Layout/LineLength:
-  Max: 120
+  Max: 150
   Exclude:
     - spec/**/*.rb
 
@@ -31,7 +31,7 @@ RSpec/MultipleExpectations:
   Max: 10
 
 RSpec/ExampleLength:
-  Max: 20
+  Max: 100
 
 RSpec/FilePath:
   Enabled: false
@@ -41,3 +41,4 @@ RSpec/NoExpectationExample:
 
 Metrics/CyclomaticComplexity:
   Enabled: false
+
