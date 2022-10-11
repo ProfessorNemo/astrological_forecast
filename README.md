@@ -1,9 +1,14 @@
 # `astrological_forecast`
 
-![Gem](https://img.shields.io/gem/v/astrological_forecast)
-![CI](https://github.com/ProfessorNemo/astrological_forecast/actions/workflows/ci.yml/badge.svg)
+[![Gem Version](https://img.shields.io/gem/dt/astrological_forecast.svg)][gem]
+[![Gem](https://img.shields.io/gem/v/astrological_forecast)][gem]
+[![Build Status](https://github.com/ProfessorNemo/astrological_forecast/actions/workflows/ci.yml/badge.svg)][actions]
 [![Test Coverage](https://codecov.io/gh/ProfessorNemo/astrological_forecast/graph/badge.svg)](https://codecov.io/gh/ProfessorNemo/astrological_forecast)
-![Downloads total](https://img.shields.io/gem/dt/astrological_forecast)
+
+[gem]: https://rubygems.org/gems/astrological_forecast
+[gem]: https://rubygems.org/gems/astrological_forecast
+[actions]: https://github.com/ProfessorNemo/astrological_forecast/actions
+[coveralls]: https://coveralls.io/r/ProfessorNemo/astrological_forecast
 ###### Язык написания - Ruby
 
 ## Описание:
