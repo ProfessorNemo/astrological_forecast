@@ -2,7 +2,6 @@
 
 require 'simplecov'
 require 'webmock/rspec'
-require 'byebug'
 
 # Запуск измерителя покрытия кода тестами с игнорированием некоторых директорий:
 SimpleCov.start do

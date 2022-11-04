@@ -5,8 +5,6 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in astrological_forecast.gemspec
 gemspec
 
-gem 'json'
-
 gem 'rake', '~> 13.0'
 
 group :test do
@@ -21,4 +19,4 @@ group :test do
   gem 'webmock', '~> 3.1'
 end
 
-gem 'addressable', '~> 2.8'
+

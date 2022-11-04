@@ -5,7 +5,7 @@ require_relative 'lib/astrological_forecast/version'
 Gem::Specification.new do |spec|
   spec.name = 'astrological_forecast'
   spec.version = AstrologicalForecast::VERSION
-  spec.authors = ['Gleb V. Zhegilin']
+  spec.authors = ['Gleb V. Zhegulin']
   spec.email = ['gleboceanborn@gmail.com']
   spec.summary = 'Zodiac horoscope parser from https://orakul.com.'
   spec.description = "Forecast for today, next day, week, month or year on request.
@@ -17,7 +17,8 @@ Gem::Specification.new do |spec|
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
 
-  spec.add_dependency 'nokogiri', '~> 1.13'
+  spec.add_dependency 'addressable'
+  spec.add_dependency 'nokogiri'
   spec.add_dependency 'open-uri'
 
   spec.files = Dir.chdir(__dir__) do
