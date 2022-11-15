@@ -4,6 +4,7 @@
 [![Gem](https://img.shields.io/gem/v/astrological_forecast)][gem]
 [![Build Status](https://github.com/ProfessorNemo/astrological_forecast/actions/workflows/ci.yml/badge.svg)][actions]
 [![Test Coverage](https://codecov.io/gh/ProfessorNemo/astrological_forecast/graph/badge.svg)](https://codecov.io/gh/ProfessorNemo/astrological_forecast)
+[![Depfu](https://img.shields.io/depfu/ProfessorNemo/astrological_forecast?style=flat-square)](https://depfu.com/repos/github/ProfessorNemo/astrological_forecast)
 
 [gem]: https://rubygems.org/gems/astrological_forecast
 [gem]: https://rubygems.org/gems/astrological_forecast
