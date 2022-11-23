@@ -63,7 +63,7 @@ require 'astrological_forecast'
 
 AstrologicalForecast.predict
 
-# Или, если не хотите ипользовать консоль для ввода данных:
+# Или, если не хотите использовать консоль для ввода данных:
 
 AstrologicalForecast.predict('19.05', 'общий', 'на сегодня')
 
