@@ -26,4 +26,4 @@ module AstrologicalForecast
 end
 
 # AstrologicalForecast.predict(true, '19.05', 'общий', 'на сегодня')
-AstrologicalForecast.predict(true)
+# AstrologicalForecast.predict(true)
