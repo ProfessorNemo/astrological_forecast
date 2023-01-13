@@ -7,6 +7,7 @@ module AstrologicalForecast
       @signs = params[:signs]
       @user_type = params[:user_type]
       @user_period = params[:user_period]
+      @console = params[:console]
     end
 
     # получение прогноза
@@ -18,8 +19,8 @@ module AstrologicalForecast
         { number: @definition['number'],
           name_ru: @definition['sign_ru'],
           name_en: @signs.keys[@definition['number'].to_i - 1],
-          type: AstrologicalForecast::Facts::TYPES[AstrologicalForecast::Facts::TYPES.keys.each(&:to_sym)[@user_type - 1]],
-          time: AstrologicalForecast::Facts::PERIOD[AstrologicalForecast::Facts::PERIOD.keys.each(&:to_sym)[@user_period - 1]] }
+          type: AstrologicalForecast::Facts::TYPES[AstrologicalForecast::Facts::TYPES.each_key(&:to_sym)[@user_type - 1]],
+          time: AstrologicalForecast::Facts::PERIOD[AstrologicalForecast::Facts::PERIOD.each_key(&:to_sym)[@user_period - 1]] }
 
       begin
         intro = AstrologicalForecast::Introduction.init(vars)
@@ -29,7 +30,9 @@ module AstrologicalForecast
         abort e.message
       end
 
-      forecast_results(intro, prediction)
+      return forecast_results(intro, prediction) if @console
+
+      intro.merge prediction
     end
 
     def forecast_results(intro, prediction)

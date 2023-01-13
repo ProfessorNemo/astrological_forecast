@@ -63,7 +63,7 @@ module AstrologicalForecast
 
     # Проверка на корректность заданного типа прогноза и периода прогнозирования
     def manual_check(opt, const, error)
-      types = const.each_with_index.each_with_object({}) do |(var, i), result|
+      types = const.each_with_index.with_object({}) do |(var, i), result|
         result[var[0]] = i + 1
       end
 

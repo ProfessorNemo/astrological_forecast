@@ -23,16 +23,18 @@ module AstrologicalForecast
 
     class << self
       def give_types
-        TYPES.keys.each(&:to_sym).each_with_index do |type, index|
-          puts "#{index + 1}. #{type}"
+
+        TYPES.each_with_index do |type, index|
+
+          puts "#{index + 1}. #{type[0]}"
         end
         puts
         print '> '
       end
 
       def give_period
-        PERIOD.keys.each(&:to_sym).each_with_index do |period, index|
-          puts "#{index + 1}. #{period}"
+        PERIOD.each_with_index do |period, index|
+          puts "#{index + 1}. #{period[0]}"
         end
         puts
         print '> '

@@ -61,15 +61,15 @@ gem 'astrological_forecast'
 ``` rb
 require 'astrological_forecast'
 
-AstrologicalForecast.predict
+AstrologicalForecast.predict(true)
 
 # Или, если не хотите использовать консоль для ввода данных:
 
-AstrologicalForecast.predict('19.05', 'общий', 'на сегодня')
+AstrologicalForecast.predict(true, '19.05', 'общий', 'на сегодня')
 
 ```
 
-## Запуск (версия с вводом данных в консоли):
+## Запуск (версия с вводом прогноза в консоль):
 
 ``` rb
 ruby name_programm.rb
@@ -114,6 +114,17 @@ ruby name_programm.rb
 стабильность - но не теряете ли Вы интересные возможности? Со временем зона комфорта может стать не такой уж 
 комфортной. Стоит подумать о том, чтобы выйти из нее раньше, чем это случится.
 ```
+
+## Запуск (версия БЕЗ вывода прогноза в консоль):
+
+``` rb
+require 'astrological_forecast'
+
+astro = AstrologicalForecast.predict(false, '19.05', 'общий', 'на сегодня')
+
+# astro.class -> Hash
+```
+
 
 ## Помочь в разработке:
 

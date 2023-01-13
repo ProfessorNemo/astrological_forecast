@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe AstrologicalForecast::Forecast do
-  let(:forecast_class) { Struct.new(:definition, :signs, :user_type, :user_period) }
+  let(:forecast_class) { Struct.new(:definition, :signs, :user_type, :user_period, :console) }
 
   let(:signs) { JSON.parse(File.read('./spec/support/signs.json')) }
+
+  let(:console) { true }
 
   let(:vars) do
     {
@@ -15,7 +17,7 @@ RSpec.describe AstrologicalForecast::Forecast do
 
   let(:definition) { AstrologicalForecast::Facts.sign_identification(signs, vars['date']) }
 
-  let(:forecast) { described_class.new(forecast_class.new(definition, signs, vars['общий'], vars['на сегодня'])) }
+  let(:forecast) { described_class.new(forecast_class.new(definition, signs, vars['общий'], vars['на сегодня'], console)) }
 
   specify '#data_forecast' do
     hash = {

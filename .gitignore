@@ -13,3 +13,4 @@
 .rspec_status
 coverage
 *.gem
+.idea/

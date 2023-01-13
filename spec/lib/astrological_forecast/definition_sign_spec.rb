@@ -5,6 +5,17 @@ RSpec.describe AstrologicalForecast::DefinitionSign do
 
   let(:sign) { JSON.parse(File.read('./spec/support/signs.json')) }
 
+  let(:body) do
+    { 'dates' => '20.02..20.03',
+      'number' => '12',
+      'sign_ru' => 'Рыбы',
+      'text' => 'Одна из самых занятных особенностей Рыб ' \
+                '- умение посмотреть на себя со стороны и оценить ' \
+                'как сильные, так и слабые стороны. Хорошо зная, что ' \
+                'им по силам, а что нет, представители этого знака относятся ' \
+                'к собственной персоне несколько иронично, а вот от других требуют серьезности.' }
+  end
+
   specify '#definition_sign_console' do
     zodiac_stub = instance_double described_class
 
@@ -26,7 +37,7 @@ RSpec.describe AstrologicalForecast::DefinitionSign do
 
       expect(zodiac.instance_variable_get(:@signs)).to eq(sign)
 
-      expect(zodiac.instance_variable_get(:@definition)).to eq(date)
+      expect(zodiac.instance_variable_get(:@definition)).to eq(body)
     end
   end
 

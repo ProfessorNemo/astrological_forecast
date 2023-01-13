@@ -30,7 +30,7 @@ module AstrologicalForecast
     def definition_sign_hands
       raise IncorrectDate unless @date.match?(/\A(\d{2})\.(\d{2})\z/)
 
-      @date
+      AstrologicalForecast::Facts.sign_identification(sign, @date)
     end
   end
 end
