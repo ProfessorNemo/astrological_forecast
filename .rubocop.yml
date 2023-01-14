@@ -4,6 +4,7 @@ require:
 
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 3.0.3
 
 Style/StringLiteralsInInterpolation:
   Enabled: true
